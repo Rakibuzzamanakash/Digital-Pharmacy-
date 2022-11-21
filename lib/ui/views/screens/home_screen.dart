@@ -75,8 +75,6 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body:  SingleChildScrollView(
-        physics: ScrollPhysics(),
-        scrollDirection: Axis.vertical,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
           child: Column(
@@ -118,9 +116,6 @@ class HomeScreen extends StatelessWidget {
                       )
                 ),
               ),
-
-
-
                 CardDiscount(),
               // ItemsList(),
             ],

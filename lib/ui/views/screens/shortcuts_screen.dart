@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:heath/Const/app_string.dart';
 import 'package:heath/Const/colors.dart';
 import 'package:heath/ui/views/widgets/card_discount.dart';
 import 'package:heath/ui/views/widgets/category_list.dart';
 import 'package:heath/ui/views/widgets/items_list.dart';
+
+import 'all_product.dart';
 
 class ShortcutScreen extends StatelessWidget {
   const ShortcutScreen({Key? key}) : super(key: key);
@@ -18,12 +21,13 @@ class ShortcutScreen extends StatelessWidget {
         child: Scaffold(
           backgroundColor: Color.fromARGB(255, 238, 232, 232),
           appBar: AppBar(
+            automaticallyImplyLeading: false,
             title: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset("assets/images/logo.png", width: 35.w),
                 Text(
-                  "HeathOS",
+                  AppString.appname,
                   style: TextStyle(
                       fontSize: 22.sp,
                       color: Colors.black,
@@ -39,7 +43,7 @@ class ShortcutScreen extends StatelessWidget {
               tabs: [
                 Tab(
                   icon: Icon(FontAwesomeIcons.chartLine),
-                  text: "Trending",
+                  text: "All Products",
                 ),
                 Tab(
                   icon: Icon(Icons.flash_auto_outlined),
@@ -58,18 +62,9 @@ class ShortcutScreen extends StatelessWidget {
           ),
           body: TabBarView(
             children: [
-              Container(
-                color: Colors.white,
-                child: ItemsList(),
-              ),
-              Container(
-                color: Colors.white,
-                child: ItemsList(),
-              ),
-              Container(
-                color: Colors.white,
-                child: ItemsList(),
-              ),
+              AllProduct(),
+              AllProduct(),
+              AllProduct(),
             ],
           ),
         ),
